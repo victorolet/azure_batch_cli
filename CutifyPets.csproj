@@ -1,0 +1,47 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <OutputType>Exe</OutputType>
+    <TargetFramework>net6.0</TargetFramework>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <Nullable>enable</Nullable>
+    <AssemblyTitle>CutifyPets - Azure Batch Video Processor</AssemblyTitle>
+    <AssemblyDescription>A scalable video processing application using Azure Batch to convert MP4 videos to GIF format</AssemblyDescription>
+    <AssemblyCompany>CutifyPets</AssemblyCompany>
+    <AssemblyProduct>CutifyPets</AssemblyProduct>
+    <AssemblyCopyright>Copyright © 2025 CutifyPets</AssemblyCopyright>
+    <AssemblyVersion>1.0.0</AssemblyVersion>
+    <FileVersion>1.0.0</FileVersion>
+    <PackageId>CutifyPets</PackageId>
+    <PackageVersion>1.0.0</PackageVersion>
+    <Authors>CutifyPets Team</Authors>
+    <PackageDescription>Azure Batch video processing application for converting MP4 videos to GIF format at scale</PackageDescription>
+    <PackageTags>azure;batch;video;processing;ffmpeg;gif;conversion;cloud;distributed</PackageTags>
+    <PackageLicenseExpression>MIT</PackageLicenseExpression>
+    <PackageProjectUrl>https://github.com/yourusername/cutifypets</PackageProjectUrl>
+    <RepositoryUrl>https://github.com/yourusername/cutifypets</RepositoryUrl>
+    <RepositoryType>git</RepositoryType>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Microsoft.Azure.Batch" Version="16.2.0" />
+    <PackageReference Include="Microsoft.Azure.Storage.Blob" Version="11.2.3" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Include="InputFiles/**" CopyToOutputDirectory="Never" />
+    <Content Include="setup-azure.sh">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="scripts/cleanup-azure.sh">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+  </ItemGroup>
+
+  <ItemGroup>
+    <Folder Include="InputFiles\" />
+    <Folder Include="scripts\" />
+    <Folder Include="docs\" />
+  </ItemGroup>
+
+</Project>
